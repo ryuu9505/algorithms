@@ -1,5 +1,19 @@
 {
     "files.associations": {
-        "random": "cpp"
+        "random": "cpp",
+        "xlocale": "cpp",
+        "vector": "cpp",
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "list": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "xstring": "cpp",
+        "xtree": "cpp",
+        "xutility": "cpp",
+        "ostream": "cpp",
+        "hash_map": "cpp",
+        "set": "cpp",
+        "utility": "cpp"
     }
 }

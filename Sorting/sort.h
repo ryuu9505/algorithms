@@ -25,19 +25,18 @@ void bubble_sort(int list[], int n)
 }
 
 void insertion_sort(int list[], int n)
-
 {
     int i, j, key;
 
     for (i = 1; i < n; i++)
     {
-        key = list[i];
+        key = list[i]; // 이번 반복에 정렬 될 요소
         for (j = i - 1; j >= 0; j--)
         {
             if (list[j] > key)
-                list[j + 1] = list[j];
+                list[j + 1] = list[j]; // key보다 큰 원소들을 옆으로 옮겨서 원소의 자리를 만들기
             else
-                break;
+                break; // *정렬된 원소중 가장 큰 원소가 key 보다 작은 경우 해당 loop가 바로 종료되므로 시간이 매우 단축됨
         }
         list[j + 1] = key;
     }
@@ -128,6 +127,24 @@ void quick_sort(int list[], int left, int right)
     // conquer
     quick_sort(list, left, i - 1);
     quick_sort(list, i + 1, right);
+}
+
+#define MAX_VALUE 9
+int count[MAX_VALUE + 1];
+
+void counting_sort(int list[], int n)
+{
+    
+    for (int i = 0; i < n; i++) // count elements
+        count[list[i]]++;
+
+    for (int i = 0; i < n; i++) // list empty
+        list[i] = 0;
+
+    for (int i = 0; i < MAX_VALUE; i++)
+        for (int j = 0; j < count[i]; j++) 
+            list[i]++;  
+
 }
 
 #endif SORT_H

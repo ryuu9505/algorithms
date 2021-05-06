@@ -17,7 +17,7 @@ int main()
 {
     int n, move[MAX_SIZE];
     int x = 1, y = 1;
-    int next_x = -1, next_y = -1;
+    int nx = -1, ny = -1;
     
     cin >> n;
     cin.ignore(); // buffer 비우기
@@ -29,15 +29,15 @@ int main()
         {
             if (moves == direction[j])
             {
-                next_x = x + dx[j];
-                next_y = y + dy[j];
+                nx = x + dx[j];
+                ny = y + dy[j];
             }
         }
 
-        if (next_x < 1 || next_y < 1 || next_x > n || next_y > n) 
+        if (nx < 1 || ny < 1 || nx > n || ny > n) 
             continue;
 
-        x = next_x;
-        y = next_y;    
+        x = nx;
+        y = ny;    
     }
 }
