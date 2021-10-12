@@ -6,6 +6,29 @@ int parent[MAX_SIZE];
 void InitSet()
 {
 	for (int i = 0; i < MAX_SIZE; ++i)
+		parent[i] = i;
+}
+
+void MakeSet(int v)
+{
+	parent[v] = v;
+}
+
+int FindSet(int v)
+{
+	if (v == parent[v]) return v;
+	return FindSet(parent[v]);
+}
+
+void UnionSet(int u, int v)
+{
+	parent[FindSet(v)] = FindSet(u);
+}
+
+/*
+void InitSet()
+{
+	for (int i = 0; i < MAX_SIZE; ++i)
 		parent[i] = -1;
 }
 
@@ -28,21 +51,7 @@ void UnionSet(int u, int v)
 
 	parent[root1] += parent[root2];
 	parent[root2] = root1;
-
-/*
-void MakeSet(int v)
-{
-	parent[v] = v;
-}
-
-int FindSet(int v)
-{
-	if (v == parent[v]) return v;
-	return FindSet(parent[v]);
-}
-
-void UnionSet(int u, int v)
-{
-	parent[FindSet(v)] = FindSet(u);
 }
 */
+
+
